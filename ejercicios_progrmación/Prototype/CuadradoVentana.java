@@ -3,6 +3,11 @@ public class CuadradoVentana {
     private int lado;
     private CirculoVentana circulo;
     private int cantidad;   
+    public CuadradoVentana(int lado, CirculoVentana circulo, int cantidad){
+        this.circulo = circulo;
+        this.cantidad = 0;
+        this.lado = 0;
+    }
     public int getLado(){
         return this.lado;
     }
@@ -22,10 +27,6 @@ public class CuadradoVentana {
         this.cantidad = cantidad;
     }
     public CuadradoVentana duplicar(){
-        CuadradoVentana cuadrado = new CuadradoVentana();
-        cuadrado.setLado(this.lado);
-        cuadrado.setCantidad(this.cantidad);
-        cuadrado.setCirculo(this.circulo.duplicar());
-        return cuadrado;
+        return new CuadradoVentana(this.lado, this.circulo.duplicar(), this.cantidad);
     }
 }

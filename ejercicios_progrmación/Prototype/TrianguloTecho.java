@@ -1,28 +1,14 @@
 package Prototype;
 public class TrianguloTecho {
-    private int lado;
+    private int base;
     private int altura;
     private int cantidad;
-    private CuadradoVentana cuadrado;
-    private CirculoVentana circulo;
 
-    public CuadradoVentana getCuadrado(){
-        return this.cuadrado;
+    public int getBase(){
+        return this.base;
     }
-    public void setCuadrado(CuadradoVentana cuadrado){
-        this.cuadrado = cuadrado;
-    }
-    public CirculoVentana getCirculo(){
-        return this.circulo;
-    }
-    public void setCirculo(CirculoVentana circulo){
-        this.circulo = circulo;
-    }
-    public int getLado(){
-        return this.lado;
-    }
-    public void setLado(int lado){
-        this.lado = lado;
+    public void setBase(int base){
+        this.base = base;
     }
     public int getAltura(){
         return this.altura;
@@ -38,11 +24,9 @@ public class TrianguloTecho {
     }
     public TrianguloTecho duplicar(){
         TrianguloTecho trianguloTecho = new TrianguloTecho();
-        trianguloTecho.setLado(this.lado);
+        trianguloTecho.setBase(this.base);
         trianguloTecho.setAltura(this.altura);
         trianguloTecho.setCantidad(this.cantidad);
-        trianguloTecho.setCuadrado(this.cuadrado.duplicar());
-        trianguloTecho.setCirculo(this.circulo.duplicar());
         return trianguloTecho;
     }
 }

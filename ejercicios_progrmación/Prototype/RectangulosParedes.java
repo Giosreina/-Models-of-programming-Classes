@@ -4,7 +4,6 @@ public class RectangulosParedes {
     private int ancho;
     private int cantidad;
     private CuadradoVentana cuadrado;
-    private CirculoVentana circulo;
     private TrianguloTecho trianguloTecho;
     
     public CuadradoVentana getCuadrado(){
@@ -12,12 +11,6 @@ public class RectangulosParedes {
     }
     public void setCuadrado(CuadradoVentana cuadrado){
         this.cuadrado = cuadrado;
-    }
-    public CirculoVentana getCirculo(){
-        return this.circulo;
-    }
-    public void setCirculo(CirculoVentana circulo){
-        this.circulo = circulo;
     }
     public TrianguloTecho getTrianguloTecho(){
         return this.trianguloTecho;
@@ -49,7 +42,6 @@ public class RectangulosParedes {
         rectangulosParedes.setAncho(this.ancho);
         rectangulosParedes.setCantidad(this.cantidad);
         rectangulosParedes.setCuadrado(this.cuadrado.duplicar());
-        rectangulosParedes.setCirculo(this.circulo.duplicar());
         rectangulosParedes.setTrianguloTecho(this.trianguloTecho.duplicar());
         return rectangulosParedes;
     }

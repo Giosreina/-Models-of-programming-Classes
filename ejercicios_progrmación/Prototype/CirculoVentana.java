@@ -1,6 +1,9 @@
 package Prototype; 
 public class CirculoVentana {
     private int radio;
+    public CirculoVentana(int radio){
+        this.radio = 0;
+    }
     public int getRadio(){
         return this.radio;
     }
@@ -8,8 +11,6 @@ public class CirculoVentana {
         this.radio = radio;
     }
     public CirculoVentana duplicar(){
-        CirculoVentana circulo = new CirculoVentana();
-        circulo.setRadio(this.radio);
-        return circulo;
+        return new CirculoVentana(this.radio);
     }
 }

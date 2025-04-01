@@ -1,12 +1,15 @@
-
-import Singleton.Cajero;
-
-
+package Singleton;
+import java.util.*;
 public class Cliente {
     public static void main (String args[]){
-        Cajero cajero0 = Cajero.getInstancia();
+        Cajero cajero = Cajero.getInstancia();
+        List<Cajero> cajeros = new ArrayList<>();
 
-        cajero0.setNumeroDeCajero(1);
-        System.out.println("El número de cajero es: " + cajero0.getNumeroDeCajero());
+        for (int i = 0; i < 10; i++) {
+            cajero.setNumeroDeCajero(i);
+            Cajero cajero1 = Cajero.getInstancia();
+            cajeros.add(cajero1);
+            System.out.println("IdCajero: " + cajero1.getNumeroDeCajero());
+        }
     }
 }

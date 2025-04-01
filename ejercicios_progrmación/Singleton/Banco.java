@@ -1,20 +1,33 @@
 package Singleton;
-import java.util.*;
-public class Banco {
-    public static void main(String[] args) {
-        List<Cajero> cajeros = new ArrayList<>();
-        Cajero cajero1 = Cajero.getInstancia(1);
-        Cajero cajero2 = Cajero.getInstancia(2);
-        Cajero cajero3 = Cajero.getInstancia(3);
+import java.util.ArrayList;
+import java.util.List;
 
-        System.out.println("Cajero 1: " + cajero1.getNumeroDeCajero());
-        System.out.println("Cajero 2: " + cajero2.getNumeroDeCajero());
-        System.out.println("Cajero 3: " + cajero3.getNumeroDeCajero());
+public class Banco{
+    private static Banco instancia;
+    private final List<Cajero> cajeros;
 
-        if (cajero1 == cajero2) {
-            System.out.println("Los cajeros son la misma instancia.");
-        } else {
-            System.out.println("Los cajeros son diferentes instancias.");
+    private Banco() {
+        cajeros = new ArrayList<>();
+    }
+
+    public static Banco getInstancia() {
+        if (instancia == null) {
+            instancia = new Banco();
+        }
+        return instancia;
+    }
+
+    public void agregarCajero(int numeroCajero) {
+        Cajero nuevoCajero = Cajero.getInstancia(numeroCajero);
+        cajeros.add(nuevoCajero);
+    }
+
+    public List<Cajero> getCajeros() {
+        return cajeros;
+    }
+    public void mostrarCajeros() {
+        for (Cajero cajero : cajeros) {
+            System.out.println("Cajero: " + cajero.getNumeroDeCajero());
         }
     }
 }

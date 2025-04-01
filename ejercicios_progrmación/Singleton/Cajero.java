@@ -2,21 +2,21 @@ package Singleton;
 
 public class Cajero {
     private static Cajero instancia;
-    private int NumeroDeCajero;
+    private int idCajero;
 
-    private Cajero(int NumeroDeCajero) {
-        this.NumeroDeCajero = NumeroDeCajero;
+    private Cajero() {
+        this.idCajero = 0;
     }
-    public static Cajero getInstancia(int NumeroDeCajero) {
+    public static Cajero getInstancia() {
         if (instancia == null) {
-            instancia = new Cajero(NumeroDeCajero);
+            instancia = new Cajero();
         }
         return instancia;
     }
     public int getNumeroDeCajero() {
-        return NumeroDeCajero;
+        return idCajero;
     }
-    public void setNumeroDeCajero(int NumeroDeCajero) {
-        this.NumeroDeCajero = NumeroDeCajero;
+    public void setNumeroDeCajero(int idCajero) {
+        this.idCajero = idCajero;
     }
 }

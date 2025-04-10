@@ -7,53 +7,29 @@ public class Hamburguesa extends Duplicado {
     public String tomate;
     public String cebolla;
     public String salsas;
+    public String tamaño;
 
-    //Métodos setter y getter de la hamburguesa
-    public void setCarne(String carne) {
+    //Construcción de la hamburguesa
+    Hamburguesa(String carne, String pan, String lechuga, String tomate, String cebolla, String salsas, String tamaño) {
         this.carne = carne;
-    }
-    public void setPan(String pan) {
         this.pan = pan;
-    }
-    public void setLechuga(String lechuga) {
         this.lechuga = lechuga;
-    }
-    public void setTomate(String tomate) {
         this.tomate = tomate;
-    }
-    public void setCebolla(String cebolla) {
         this.cebolla = cebolla;
-    }
-    public void setSalsas(String salsas) {
         this.salsas = salsas;
-    }
-    public String getCarne() {
-        return carne;
-    }
-    public String getPan() {
-        return pan;
-    }
-    public String getLechuga() {
-        return lechuga;
-    }
-    public String getTomate() {
-        return tomate;
-    }
-    public String getCebolla() {
-        return cebolla;
-    }
-    public String getSalsas() {
-        return salsas;
+        this.tamaño = tamaño;
     }
     //Método duplicar hamburguesa
     public Hamburguesa duplicar() {
-        Hamburguesa hamburguesa = new Hamburguesa();
-        hamburguesa.setCarne(this.carne);
-        hamburguesa.setPan(this.pan);
-        hamburguesa.setLechuga(this.lechuga);
-        hamburguesa.setTomate(this.tomate);
-        hamburguesa.setCebolla(this.cebolla);
-        hamburguesa.setSalsas(this.salsas);
+        Hamburguesa hamburguesa = new Hamburguesa(
+            this.carne,
+            this.pan,
+            this.lechuga,
+            this.tomate,
+            this.cebolla,
+            this.salsas,
+            this.tamaño
+        );
         return hamburguesa;
     }
 }

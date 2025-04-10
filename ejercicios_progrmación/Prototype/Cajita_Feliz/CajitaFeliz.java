@@ -8,6 +8,7 @@ public class CajitaFeliz extends Duplicado {
     public Bebida bebida;
     public Postre postre;
     public Juguete juguete;
+    public int precio;
 
     //Metodos setter y getter de la cajita feliz
     public void setHamburguesa(Hamburguesa hamburguesa) {
@@ -30,6 +31,10 @@ public class CajitaFeliz extends Duplicado {
         this.juguete = juguete;
     }
 
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
     public Hamburguesa getHamburguesa() {
         return hamburguesa;
     }
@@ -49,14 +54,18 @@ public class CajitaFeliz extends Duplicado {
     public Juguete getJuguete() {
         return juguete;
     }
+    public int getPrecio() {
+        return precio;
+    }
     //Duplicar la cajita feliz
-    public Duplicado duplicar(){
+    public CajitaFeliz duplicar(){
         CajitaFeliz cajitaFeliz = new CajitaFeliz();
         cajitaFeliz.setHamburguesa(this.hamburguesa.duplicar());
         cajitaFeliz.setPapasFritas(this.papasFritas.duplicar());
         cajitaFeliz.setBebida(this.bebida.duplicar());
         cajitaFeliz.setPostre(this.postre.duplicar());
         cajitaFeliz.setJuguete(this.juguete.duplicar());
+        cajitaFeliz.setPrecio(this.precio);
         return cajitaFeliz;
     }
 }

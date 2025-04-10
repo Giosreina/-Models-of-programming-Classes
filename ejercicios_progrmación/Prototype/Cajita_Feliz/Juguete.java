@@ -1,33 +1,22 @@
 package Prototype.Cajita_Feliz;
-
+//Creación de la clase Juguete
 public class Juguete extends Duplicado{
     String tipo;
     String tamaño;
     String color;
-
-    public void setTipo(String tipo) {
+    //Construcción del juguete
+    Juguete(String tipo, String tamaño, String color) {
         this.tipo = tipo;
-    }
-    public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
-    }
-    public void setColor(String color) {
         this.color = color;
     }
-    public String getTipo() {
-        return tipo;
-    }
-    public String getTamaño() {
-        return tamaño;
-    }
-    public String getColor() {
-        return color;
-    }
-    public Duplicado duplicar() {
-        Juguete juguete = new Juguete();
-        juguete.setTipo(this.tipo);
-        juguete.setTamaño(this.tamaño);
-        juguete.setColor(this.color);
+    //Duplicado del juguete
+    public Juguete duplicar() {
+        Juguete juguete = new Juguete(
+            this.tipo,
+            this.tamaño,
+            this.color
+        );
         return juguete;
     }
 }

@@ -33,7 +33,7 @@ public class EntradaArchivo extends ProductoEntrada {
                 
         }
         for (String linea : entrada) {
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) { 
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) { 
                 writer.write(linea);
                 writer.newLine();
                 

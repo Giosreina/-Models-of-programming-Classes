@@ -5,9 +5,8 @@ public class CamionNiñera extends Vehiculo {
     public String coordenadas;
     Carro[][] carros = new Carro[2][3];
 
-    public CamionNiñera(double peso, String coordenadas) {
+    public CamionNiñera(double peso) {
         this.peso = peso;
-        this.coordenadas = coordenadas;
     }
 
     public void subirCarro(Carro carro, int fila, int columna) {
@@ -52,7 +51,11 @@ public class CamionNiñera extends Vehiculo {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 3; j++) {
                 if (carros[i][j].equals(carro)) {
-                    System.out.println("Coordenadas del carro en la posición [" + i + "][" + j + "]: ");
+                    String[] coordenadas = new String[2];
+                    coordenadas[0] = String.valueOf(i);
+                    coordenadas[1] = String.valueOf(j);
+                    carro.setCoordenadas(coordenadas);
+                    carro.getCoordenadas(carro);
                 }
             }
         }

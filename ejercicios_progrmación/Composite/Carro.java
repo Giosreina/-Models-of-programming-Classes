@@ -2,7 +2,7 @@ package Composite;
 
 public class Carro extends Vehiculo {
     private double peso;
-    private String coordenadas;
+    private String[] coordenadas;
     private String placa;
     private String modelo;
 
@@ -14,13 +14,13 @@ public class Carro extends Vehiculo {
     public String getPlaca() {
         return placa;
     }
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
     public String getModelo() {
         return modelo;
     }   
-    public String getCoordenadas() {
-        return coordenadas;
-    }
-    public void setCoordenadas(String coordenadas) {
+    public void setCoordenadas(String[] coordenadas) {
         this.coordenadas = coordenadas;
     }
     @Override
@@ -29,7 +29,7 @@ public class Carro extends Vehiculo {
     }
     @Override
     public void getCoordenadas(Carro carro) {
-        System.out.println("Coordenadas del carro: " + coordenadas);
+        System.out.println("Coordenadas del carro: " + this.coordenadas);
     }
-    
+
 }
